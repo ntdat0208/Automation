@@ -1,0 +1,1 @@
+2018-08-23 13:03:01,062 INFO  [com.logigear.testng.QTiumTestListener] - Test[Selenium - TestNG - Chrome on Mac] - thread[1] 

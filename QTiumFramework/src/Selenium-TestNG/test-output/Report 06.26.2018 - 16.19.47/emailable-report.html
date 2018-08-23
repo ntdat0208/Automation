@@ -1,0 +1,1904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test Results Report</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="Test results report" />
+<script type="text/javascript" src="reportng.js"></script>
+<script langauge="JavaScript" type="text/javascript">
+function clickHandler(e) {
+ trElement = e.parentNode.parentNode;
+ obj = trElement.getElementsByTagName('div').item(0); 
+ if (obj.style.display=="none") {
+  obj.style.display="block";
+ }
+ else {
+  obj.style.display="none";
+ }
+}
+</script>
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #006699;
+}
+
+a:visited {
+	color: #003366;
+}
+
+body {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	line-height: 1.8em;
+	font-size: 62.5%;
+	margin: 1.8em 1em;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 2.7em;
+	margin-bottom: 0.6667em;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	margin-bottom: 0;
+	margin-top: 2em;
+}
+
+p {
+	font-size: 1.3em;
+}
+
+td {
+	font-size: 1.3em;
+}
+
+.header {
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: left;
+}
+
+.passed {
+	background-color: #44aa44;
+}
+
+.skipped {
+	background-color: #ffaa00;
+}
+
+.failed {
+	background-color: #ff4444;
+}
+
+.failedConfig {
+	background-color: #800000;
+	color: #ffffff
+}
+
+.skippedConfig {
+	background-color: #cc6600;
+	color: #ffffff
+}
+
+.totalLabel {
+	font-weight: bold;
+	background-color: #ffffff;
+}
+
+.suite {
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+.test {
+	background-color: #eeeeee;
+	padding-left: 2em;
+}
+
+.test .passed {
+	background-color: #88ee88;
+}
+
+.test .skipped {
+	background-color: #ffff77;
+}
+
+.test .failed {
+	background-color: #ff8888;
+}
+
+.group {
+	background-color: #cccccc;
+	color: #000000;
+	font-weight: bold;
+}
+
+.suiteLinks {
+	float: right;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+.suiteLinks a {
+	color: #ffffff;
+	margin-left: .5em;
+}
+
+.passRate {
+	font-weight: bold;
+	text-align: right;
+}
+
+.duration {
+	text-align: right;
+}
+
+.thread {
+	white-space: nowrap;
+}
+
+.resultsTable .TMDes {
+	width: 40em;
+	text-align: left;
+}
+
+.resultsTable {
+	border: 0;
+	width: 100%;
+	margin-top: 1.8em;
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+}
+
+.resultsTable .method {
+	width: 10em;
+}
+
+.resultsTable .duration {
+	width: 6em;
+}
+
+.resultsTable td {
+	vertical-align: top;
+	padding: 0 1em;
+}
+
+.resultsTable th {
+	padding: 0 .5em;
+}
+
+.number {
+	text-align: right;
+}
+
+.zero {
+	font-weight: normal;
+}
+
+.columnHeadings {
+	font-size: 1em;
+}
+
+.columnHeadings th {
+	font-weight: normal;
+}
+
+.configTable {
+	border: 1px solid #800000;
+	color: #800000;
+	margin-bottom: 1.5em;
+}
+
+#sidebarHeader {
+	padding: 1.8em 1em;
+	margin: 0 -1em 1.8em -1em;
+}
+
+#suites {
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+	width: 100%;
+}
+
+.tests {
+	display: table-row-group;
+}
+
+.header.suite {
+	cursor: pointer;
+	clear: right;
+	height: 1.214em;
+	margin-top: 1px;
+}
+
+div.test {
+	margin-top: 0.1em;
+	clear: right;
+	font-size: 1.3em;
+}
+
+/* The +/- toggle used in the navigation frame. */
+.toggle {
+	font-family: monospace;
+	font-weight: bold;
+	padding-left: 2px;
+	padding-right: 5px;
+	color: #777777;
+}
+
+.successIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #44aa44;
+}
+
+.skipIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #ffaa00;
+}
+
+.failureIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #ff4444;
+}
+
+/* These classes are for information about an individual test result. */
+.result {
+	font-size: 1.1em;
+	vertical-align: middle;
+}
+
+.dependency {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-weight: bold;
+}
+
+.arguments {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-weight: bold;
+}
+
+.testOutput {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	color: #666666;
+}
+
+.stackTrace {
+	font-size: 0.9em;
+	line-height: 1.2em;
+	margin-left: 2em;
+	display: none;
+}
+
+.stackTrace .stackTrace {
+	font-size: inherit;
+}
+
+.description {
+	border-bottom: 1px dotted #006699;
+}
+
+#meta {
+	font-size: 1em;
+	text-align: right;
+	float: right;
+}
+
+#systemInfo {
+	color: #666666;
+}
+
+/* Reporter log output (individual test ouput is style by "testOutput" above). */
+#log {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-size: 1.3em;
+	margin-top: 1.8em;
+}
+
+.overviewTable {
+	width: 100%;
+	margin-top: 1.8em;
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+}
+
+.overviewTable td {
+	padding: 0 1em;
+}
+
+.overviewTable th {
+	padding: 0 .5em;
+}
+
+.overviewTable .duration {
+	width: 6em;
+}
+
+.overviewTable .passRate {
+	width: 6em;
+}
+
+.overviewTable .number {
+	width: 5em;
+}
+
+.overviewTable tr {
+	height: 1.6em;
+}
+</style>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+function toggle(elementID){
+var target1 = document.getElementById(elementID)
+if (target1.style.display == 'none') {
+target1.style.display = 'block'
+} else {
+target1.style.display = 'none'
+}
+}
+</script>
+
+
+	<div id="meta">
+		Generated by <a href="http://www.testng.org" target="_top">TestNG</a> with <a href="http://reportng.dev.java.net" target="_top">ReportNG</a>
+  		at 21:45 ICT on Monday 25 June 2018
+  		<br /><span id="systemInfo">ddinnguyeenx@ddins-MacBook-Air.local&nbsp;/&nbsp;Java 1.8.0_172 (Oracle Corporation)&nbsp;/&nbsp;Mac OS X 10.12 (x86_64)</span>
+	</div>
+
+	<h1>Test Results Report</h1>
+	<div></div>
+
+		<table class="overviewTable">
+	  	  <tr>
+	    <th colspan="8" class="header suite">
+	      FptShop Daily Automaiton Tests
+	    </th>
+	  </tr>
+	  <tr class="columnHeadings">
+	    <td>Test</td>
+	    <th>Duration</th>
+	    <th>Passed</th>
+	    <th>Skipped</th>
+	    <th>Failed</th>
+	    <th>Pass Rate</th>
+	  </tr>
+	  	
+	  <tr class="test">
+	    <td class="test">
+	      <a href="#1">Selenium - TestNG - Safari on Mac</a>
+	    </td>
+	    <td class="duration">
+	      66133.494s
+	    </td>
+	
+	    	    <td class="passed number">19</td>
+	    	
+	    	    <td class="zero number">0</td>
+	    	
+	    	    <td class="failed number">13</td>
+	    	
+	    <td class="passRate">
+	      	      59%
+	      	    </td>
+	    
+	    <td></td>
+			
+		<td></td>
+	  </tr>
+	  	
+	  <tr class="suite">
+	    <td class="totalLabel">Total</td>
+	    
+	    <td class="duration"></td>
+	
+	    	    <td class="passed number">19</td>
+	    	
+	    	    <td class="zero number">0</td>
+	    	
+	    	    <td class="failed number">13</td>
+	    	
+	    <td class="passRate suite">
+	      	      59%
+	      	    </td>
+	    
+	   	<td></td>
+			
+		<td></td>
+	
+	  </tr>
+	</table>
+	
+
+	<a id="{#$velocityCount}"></a>
+<h2>Selenium - TestNG - Safari on Mac</h2>
+<p>
+  Test duration: 66133.494s
+</p>
+<script type="text/javascript" src="reportng.js"></script>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="4" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="4" class="group">FptShop.FptShopTests</td>
+      </tr>
+            
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001a: Verify Order An Item By Search Suggestion Successfully">TC001a_Order_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001a: Verify Order An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    108.423s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC001a_Order_By_Search_Suggestion class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_47_39_TC001a_Order_By_Search_Suggestion.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_47_39_TC001a_Order_By_Search_Suggestion.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 4 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC001a_Order_By_Search_Suggestion(FptShopTests.java:734)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001b: Verify ShopBooking An Item By Search Suggestion Successfully">TC001b_Order_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001b: Verify ShopBooking An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    167.815s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC001b_Order_By_Search_Suggestion class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_50_37_TC001b_Order_By_Search_Suggestion.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_50_37_TC001b_Order_By_Search_Suggestion.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Could not find element: {&quot;using&quot;:&quot;id&quot;,&quot;value&quot;:&quot;CityIDShop&quot;} (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 10.05 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null<br/>
+*** Element info: {Using=id, value=CityIDShop}</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+              org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:445)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC001b_Order_By_Search_Suggestion(FptShopTests.java:713)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002b: Verify Shopbooking An Item By Advanced Searching Successfully">TC002b_Order_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002b: Verify Shopbooking An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    109.757s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC002b_Order_By_Advanced_Searching class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_57_57_TC002b_Order_By_Advanced_Searching.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/25_06_2018 /safari/25_06_2018_09_57_57_TC002b_Order_By_Advanced_Searching.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 3 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC002b_Order_By_Advanced_Searching(FptShopTests.java:648)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003b: Verify Order An Item By ShopBookingLink After Selecting Item At HomePage Successfully">TC003b_Order_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003b: Verify Order An Item By ShopBookingLink After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    20.252s
+  </td>
+  <td class="result">
+        
+            
+
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: driver.version: RemoteWebDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)<br />
+              org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:945)<br />
+              com.logigear.qtium.QTiumNavigator.open(QTiumNavigator.java:23)<br />
+              com.logigear.selenium.QTiumAutomation.openURL(QTiumAutomation.java:197)<br />
+              FptShop.HomePage.open(HomePage.java:27)<br />
+              FptShop.FptShopTests.TC003b_Order_By_Selecting_Item_At_HomePage(FptShopTests.java:569)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse">java.lang.IllegalStateException: Executor has not been started yet</a><br />
+        <div class="stackTrace" id="exception-4">
+                      com.google.common.base.Preconditions.checkState(Preconditions.java:174)<br />
+                      org.openqa.selenium.safari.SafariDriverCommandExecutor.execute(SafariDriverCommandExecutor.java:172)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:945)<br />
+                      com.logigear.qtium.QTiumNavigator.open(QTiumNavigator.java:23)<br />
+                      com.logigear.selenium.QTiumAutomation.openURL(QTiumAutomation.java:197)<br />
+                      FptShop.HomePage.open(HomePage.java:27)<br />
+                      FptShop.FptShopTests.TC003b_Order_By_Selecting_Item_At_HomePage(FptShopTests.java:569)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:498)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+                      org.testng.TestRunner.run(TestRunner.java:624)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+                      org.testng.TestNG.run(TestNG.java:1048)<br />
+                      org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+                      org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+                      org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004b: Verify Order An Item By ShopBookingLink Through Category Successfully">TC004b_Order_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004b: Verify Order An Item By ShopBookingLink Through Category Successfully</td>
+
+  <td class="duration">
+    154.169s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC004b_Order_Item_By_Category class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_12_58_TC004b_Order_Item_By_Category.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_12_58_TC004b_Order_Item_By_Category.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 3 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-5">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC004b_Order_Item_By_Category(FptShopTests.java:516)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006b: Verify Order By Select An Item At Ranking Page Successfully">TC006b_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006b: Verify Order By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    141.420s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC006b_Order_Item_Through_Ranking_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_29_02_TC006b_Order_Item_Through_Ranking_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_29_02_TC006b_Order_Item_Through_Ranking_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 5 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-6">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC006b_Order_Item_Through_Ranking_Page(FptShopTests.java:395)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007a: Verify Order An Item By Select Price Range At Category Page Successfully">TC007a_Order_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007a: Verify Order An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    129.591s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC007a_Order_By_Select_Price_Range_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_37_46_TC007a_Order_By_Select_Price_Range_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_37_46_TC007a_Order_By_Select_Price_Range_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 4 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-7">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC007a_Order_By_Select_Price_Range_At_Category_Page(FptShopTests.java:326)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007b: Verify ShopBooking An Item By Select Price Range At Category Page Successfully">TC007b_Order_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007b: Verify ShopBooking An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    137.672s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC007b_Order_By_Select_Price_Range_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_40_14_TC007b_Order_By_Select_Price_Range_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_40_14_TC007b_Order_By_Select_Price_Range_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-8', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 10 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-8">
+              sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC007b_Order_By_Select_Price_Range_At_Category_Page(FptShopTests.java:301)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009a: Verify Order An Item By Select Item At Category Page Successfully">TC009a_Order_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009a: Verify Order An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    115.933s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC009a_Order_By_Select_Item_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_51_15_TC009a_Order_By_Select_Item_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_51_15_TC009a_Order_By_Select_Item_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-9', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 4 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-9">
+              sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC009a_Order_By_Select_Item_At_Category_Page(FptShopTests.java:176)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009b: Verify ShopBooking An Item By Select Item At Category Page Successfully">TC009b_Order_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009b: Verify ShopBooking An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    122.491s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC009b_Order_By_Select_Item_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_53_27_TC009b_Order_By_Select_Item_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_53_27_TC009b_Order_By_Select_Item_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-10', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 4 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-10">
+              sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC009b_Order_By_Select_Item_At_Category_Page(FptShopTests.java:153)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009c: Verify Installment Buying An Item By Select Item At Category Page Successfully">TC009c_Installment_Buying_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009c: Verify Installment Buying An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    223.919s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC009c_Installment_Buying_By_Select_Item_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_57_22_TC009c_Installment_Buying_By_Select_Item_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_57_22_TC009c_Installment_Buying_By_Select_Item_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-11', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Could not find element: {&quot;using&quot;:&quot;id&quot;,&quot;value&quot;:&quot;sl-city&quot;} (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 10.01 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null<br/>
+*** Element info: {Using=id, value=sl-city}</b></a><br />
+    <div class="stackTrace" id="exception-11">
+              sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+              org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:445)<br />
+              FptShop.InstallmentBuyingPage.fillInformationInstallmentBuying(InstallmentBuyingPage.java:48)<br />
+              FptShop.FptShopTests.TC009c_Installment_Buying_By_Select_Item_At_Category_Page(FptShopTests.java:130)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 010b: Verify Installment Buying Through Installment Buying Category Page Successfully">TC010b_Installment_Buying_Through_Installment_Buying_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 010b: Verify Installment Buying Through Installment Buying Category Page Successfully</td>
+
+  <td class="duration">
+    238.048s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC010b_Installment_Buying_Through_Installment_Buying_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_04_05_06_TC010b_Installment_Buying_Through_Installment_Buying_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_04_05_06_TC010b_Installment_Buying_Through_Installment_Buying_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-12', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 10 seconds waiting for presence of element located by: By.id: txtName<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-12">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)<br />
+              com.logigear.selenium.QTiumAutomation.findElement(QTiumAutomation.java:60)<br />
+              com.logigear.selenium.QTiumAutomation.scrollPageToElementJS(QTiumAutomation.java:422)<br />
+              com.logigear.selenium.QTiumAutomation.scrollPageToElement(QTiumAutomation.java:415)<br />
+              com.logigear.selenium.QTiumAutomation.scrollPageToElementAndEnter(QTiumAutomation.java:399)<br />
+              FptShop.InstallmentBuyingPage.fillInformationInstallmentBuying(InstallmentBuyingPage.java:35)<br />
+              FptShop.FptShopTests.TC010b_Installment_Buying_Through_Installment_Buying_Category_Page(FptShopTests.java:91)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-13', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: Could not find element: {&quot;using&quot;:&quot;id&quot;,&quot;value&quot;:&quot;txtName&quot;} (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 10.07 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null<br/>
+*** Element info: {Using=id, value=txtName}</a><br />
+        <div class="stackTrace" id="exception-13">
+                      sun.reflect.GeneratedConstructorAccessor4.newInstance(Unknown Source)<br />
+                      sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+                      org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+                      org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+                      org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:899)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions.access$0(ExpectedConditions.java:897)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:1)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)<br />
+                      com.logigear.selenium.QTiumAutomation.findElement(QTiumAutomation.java:60)<br />
+                      com.logigear.selenium.QTiumAutomation.scrollPageToElementJS(QTiumAutomation.java:422)<br />
+                      com.logigear.selenium.QTiumAutomation.scrollPageToElement(QTiumAutomation.java:415)<br />
+                      com.logigear.selenium.QTiumAutomation.scrollPageToElementAndEnter(QTiumAutomation.java:399)<br />
+                      FptShop.InstallmentBuyingPage.fillInformationInstallmentBuying(InstallmentBuyingPage.java:35)<br />
+                      FptShop.FptShopTests.TC010b_Installment_Buying_Through_Installment_Buying_Category_Page(FptShopTests.java:91)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:498)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+                      org.testng.TestRunner.run(TestRunner.java:624)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+                      org.testng.TestNG.run(TestNG.java:1048)<br />
+                      org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+                      org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+                      org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 011b: Verify Installment Buying An Item By Select Item At News Page Successfully">TC011b_Installment_Buying_By_Select_Item_At_News_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 011b: Verify Installment Buying An Item By Select Item At News Page Successfully</td>
+
+  <td class="duration">
+    126.722s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC011b_Installment_Buying_By_Select_Item_At_News_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_04_10_26_TC011b_Installment_Buying_By_Select_Item_At_News_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_04_10_26_TC011b_Installment_Buying_By_Select_Item_At_News_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-14', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and may not be manipulated (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 3 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.safari.SafariDriver<br/>
+Capabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=10.0, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]<br/>
+Session ID: null</b></a><br />
+    <div class="stackTrace" id="exception-14">
+              sun.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              org.openqa.selenium.support.ui.Select.setSelected(Select.java:323)<br />
+              org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:178)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:449)<br />
+              FptShop.ShippingPage.receiveAtShop(ShippingPage.java:44)<br />
+              FptShop.ShippingPage.selectPlaceToReceive(ShippingPage.java:27)<br />
+              FptShop.ShippingPage.selectShipping(ShippingPage.java:98)<br />
+              FptShop.FptShopTests.TC011b_Installment_Buying_By_Select_Item_At_News_Page(FptShopTests.java:45)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="4" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="4" class="group">FptShop.FptShopTests</td>
+      </tr>
+            
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001c: Verify Installment Buying An Item By Search Suggestion Successfully">TC001c_Installment_Buying_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001c: Verify Installment Buying An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    165.567s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002a: Verify Order An Item By Advanced Searching Successfully">TC002a_Order_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002a: Verify Order An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    153.893s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002c: Verify Installment Buying An Item By Advanced Searching Successfully">TC002c_Installment_Buying_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002c: Verify Installment Buying An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    165.391s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003a: Verify Order An Item By BuyNowButton After Selecting Item At HomePage Successfully">TC003a_Order_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003a: Verify Order An Item By BuyNowButton After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    61359.105s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003c: Verify Installment Buying An Item After Selecting Item At HomePage Successfully">TC003c_Instalment_Buying_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003c: Verify Installment Buying An Item After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    184.021s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004a: Verify Order An Item By BuyNowButton Through Category Successfully">TC004a_Order_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004a: Verify Order An Item By BuyNowButton Through Category Successfully</td>
+
+  <td class="duration">
+    187.155s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004c: Verify Installment Buying An Item Through Category Successfully">TC004c_Installment_Buying_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004c: Verify Installment Buying An Item Through Category Successfully</td>
+
+  <td class="duration">
+    213.389s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005a: Verify Order Best Buy Item By BuyNowButton Through Category Successfully">TC005a_Order_Best_Buy_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005a: Verify Order Best Buy Item By BuyNowButton Through Category Successfully</td>
+
+  <td class="duration">
+    160.030s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005b: Verify Order Best Buy Item By ShopBookingLink Through Category Successfully">TC005b_Order_Best_Buy_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005b: Verify Order Best Buy Item By ShopBookingLink Through Category Successfully</td>
+
+  <td class="duration">
+    171.963s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005c: Verify Installment Buying An Item Through Category Successfully">TC005c_Installment_Buying_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005c: Verify Installment Buying An Item Through Category Successfully</td>
+
+  <td class="duration">
+    186.009s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC005c_Installment_Buying_Item_By_Category class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_25_10_TC005c_Installment_Buying_Item_By_Category.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/26_06_2018 /safari/26_06_2018_03_25_10_TC005c_Installment_Buying_Item_By_Category.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-24', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [true] but found [false]</b></a><br />
+    <div class="stackTrace" id="exception-24">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:496)<br />
+              org.testng.Assert.assertTrue(Assert.java:42)<br />
+              org.testng.Assert.assertTrue(Assert.java:52)<br />
+              com.logigear.selenium.QTiumAssert.verifyTrue(QTiumAssert.java:14)<br />
+              com.logigear.selenium.QTiumAssert.verifyTrue(QTiumAssert.java:27)<br />
+              FptShop.InstallmentBuyingPage.checkInstallmentBuyingResult(InstallmentBuyingPage.java:74)<br />
+              FptShop.FptShopTests.TC005c_Installment_Buying_Item_By_Category(FptShopTests.java:430)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006a: Verify Order An Item At Ranking Page Successfully">TC006a_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006a: Verify Order An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    80.536s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006c: Verify ShopBooking By Select An Item At Ranking Page Successfully">TC006c_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006c: Verify ShopBooking By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    183.698s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006d: Verify Installment Buying By Select An Item At Ranking Page Successfully">TC006d_Installment_Buying_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006d: Verify Installment Buying By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    200.137s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007c: Verify Installment Buying An Item By Select Price Range At Category Page Successfully">TC007c_Installment_Buying_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007c: Verify Installment Buying An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    78.633s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008a: Verify Order An Item By Select Brand At Category Page Successfully">TC008a_Order_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008a: Verify Order An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    161.187s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008b: Verify ShopBooking An Item By Select Brand At Category Page Successfully">TC008b_Order_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008b: Verify ShopBooking An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    91.048s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008c: Verify Installment Buying An Item By Select Brand At Category Page Successfully">TC008c_Installment_Buying_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008c: Verify Installment Buying An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    203.171s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 010a: Verify Installment Buying At Installment Buying Category Page Successfully">TC010a_Installment_Buying_Through_Installment_Buying_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 010a: Verify Installment Buying At Installment Buying Category Page Successfully</td>
+
+  <td class="duration">
+    205.761s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 011a: Verify Order An Item At News Page Successfully">TC011a_Order_By_Select_Item_At_News_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 011a: Verify Order An Item At News Page Successfully</td>
+
+  <td class="duration">
+    183.435s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+      </table>
+
+
+	<!-- @author: vu.anh.nguyen@logigear.com 13 Oct, 2011 -->
+	<!-- @author: truong.pham@logigear.com 26 Step, 2013 -->	
+	
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Tests"/>
+	<classpathentry kind="src" path="Interfaces"/>
+	<classpathentry kind="src" path="Actions"/>
+	<classpathentry kind="src" path="TestSuites"/>
+	<classpathentry kind="src" path="Resources"/>
+	<classpathentry kind="lib" path="Libs/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="Libs/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="Libs/reportng-1.1.4.jar"/>
+	<classpathentry kind="lib" path="Libs/velocity-dep-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="Libs/gson-2.2.4.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/QTium"/>
+	<classpathentry kind="lib" path="Libs/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="Libs/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="Libs/selenium-java-2.53.1-srcs.jar"/>
+	<classpathentry kind="lib" path="Libs/selenium-java-2.53.1.jar"/>
+	<classpathentry kind="lib" path="Libs/java-client-4.1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

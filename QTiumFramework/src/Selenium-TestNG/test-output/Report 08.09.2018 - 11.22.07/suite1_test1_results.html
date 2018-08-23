@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - Selenium - TestNG - FireFox on Mac</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>Selenium - TestNG - FireFox on Mac</h1>
+<p>
+  Test duration: 9472.350s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="4" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="4" class="group">FptShop.FptShopTests</td>
+      </tr>
+            
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004c: Verify Installment Buying An Item Through Category Successfully">TC004c_Installment_Buying_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004c: Verify Installment Buying An Item Through Category Successfully</td>
+
+  <td class="duration">
+    431.421s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC004c_Installment_Buying_By_Category class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_09_23_33_TC004c_Installment_Buying_By_Category.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_09_23_33_TC004c_Installment_Buying_By_Category.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;sl-city&quot;}<br/>
+Command duration or timeout: 30.09 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br/>
+Session ID: 54d12d9b-3e30-804a-8179-0adde344e47d<br/>
+*** Element info: {Using=id, value=sl-city}</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+              org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:484)<br />
+              FptShop.InstallmentBuyingPage.fillInformationInstallmentBuying(InstallmentBuyingPage.java:47)<br />
+              FptShop.FptShopTests.TC004c_Installment_Buying_By_Category(FptShopTests.java:454)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;sl-city&quot;}<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: driver.version: unknown</a><br />
+        <div class="stackTrace" id="exception-1">
+                      &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous6838302904746835889webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)<br />
+                      &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous6838302904746835889webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006a: Verify Order An Item At Ranking Page Successfully">TC006a_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006a: Verify Order An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    92.122s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC006a_Order_Item_Through_Ranking_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_10_16_37_TC006a_Order_Item_Through_Ranking_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_10_16_37_TC006a_Order_Item_Through_Ranking_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.WebDriverException: Element is not clickable at point (817.25, 512.1333312988281). Other element would receive the click: &lt;input class=&quot;ppu_rbnt_submit&quot; name=&quot;&quot; value=&quot;Đặt ngay&quot; type=&quot;submit&quot;&gt;<br/>
+Command duration or timeout: 76 milliseconds<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br/>
+Session ID: 7ae868ea-2bf2-3d48-b86d-5500dbc01590</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)<br />
+              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)<br />
+              com.logigear.selenium.QTiumAutomation.click(QTiumAutomation.java:396)<br />
+              FptShop.RankingPage.orderNow(RankingPage.java:45)<br />
+              FptShop.FptShopTests.TC006a_Order_Item_Through_Ranking_Page(FptShopTests.java:377)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008c: Verify Installment Buying An Item By Select Brand At Category Page Successfully">TC008c_Installment_Buying_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008c: Verify Installment Buying An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    672.338s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC008c_Installment_Buying_By_Select_Brand_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_10_54_23_TC008c_Installment_Buying_By_Select_Brand_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_10_54_23_TC008c_Installment_Buying_By_Select_Brand_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;sl-city&quot;}<br/>
+Command duration or timeout: 30.05 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br/>
+Session ID: 62b39097-b32c-9841-bf76-79d1a14d9097<br/>
+*** Element info: {Using=id, value=sl-city}</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+              org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:484)<br />
+              FptShop.InstallmentBuyingPage.fillInformationInstallmentBuying(InstallmentBuyingPage.java:47)<br />
+              FptShop.FptShopTests.TC008c_Installment_Buying_By_Select_Brand_At_Category_Page(FptShopTests.java:186)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;sl-city&quot;}<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: driver.version: unknown</a><br />
+        <div class="stackTrace" id="exception-4">
+                      &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous7884835336500062702webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)<br />
+                      &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous7884835336500062702webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009a: Verify Order An Item By Select Item At Category Page Successfully">TC009a_Order_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009a: Verify Order An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    402.803s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC009a_Order_By_Select_Item_At_Category_Page class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_11_01_27_TC009a_Order_By_Select_Item_At_Category_Page.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_11_01_27_TC009a_Order_By_Select_Item_At_Category_Page.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;CityIDHome&quot;}<br/>
+Command duration or timeout: 30.03 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br/>
+Session ID: 1361d667-491b-b848-a6ad-b5397c43f318<br/>
+*** Element info: {Using=id, value=CityIDHome}</b></a><br />
+    <div class="stackTrace" id="exception-5">
+              sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)<br />
+              org.openqa.selenium.By$ById.findElement(By.java:218)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              com.logigear.selenium.QTiumAutomation.selectByIndex(QTiumAutomation.java:484)<br />
+              FptShop.CartPage.receiveAtHome(CartPage.java:62)<br />
+              FptShop.CartPage.selectPlaceToReceive(CartPage.java:29)<br />
+              FptShop.CartPage.checkOut(CartPage.java:81)<br />
+              FptShop.FptShopTests.TC009a_Order_By_Select_Item_At_Category_Page(FptShopTests.java:163)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;CityIDHome&quot;}<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;<br/>
+System info: host: &apos;ddins-MacBook-Air.local&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12&apos;, java.version: &apos;1.8.0_172&apos;<br/>
+Driver info: driver.version: unknown</a><br />
+        <div class="stackTrace" id="exception-6">
+                      &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous7520468583364362296webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)<br />
+                      &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/hg/dpbzdcdj0hvbhf6nn6c2f0_w0000gn/T/anonymous7520468583364362296webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="4" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="4" class="group">FptShop.FptShopTests</td>
+      </tr> 
+            
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001a: Verify Order An Item By Search Suggestion Successfully">TC001a_Order_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001a: Verify Order An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    206.138s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001b: Verify ShopBooking An Item By Search Suggestion Successfully">TC001b_Order_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001b: Verify ShopBooking An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    260.991s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 001c: Verify Installment Buying An Item By Search Suggestion Successfully">TC001c_Installment_Buying_By_Search_Suggestion</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 001c: Verify Installment Buying An Item By Search Suggestion Successfully</td>
+
+  <td class="duration">
+    84.075s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002a: Verify Order An Item By Advanced Searching Successfully">TC002a_Order_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002a: Verify Order An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    210.601s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002b: Verify Shopbooking An Item By Advanced Searching Successfully">TC002b_Order_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002b: Verify Shopbooking An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    202.794s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 002c: Verify Installment Buying An Item By Advanced Searching Successfully">TC002c_Installment_Buying_By_Advanced_Searching</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 002c: Verify Installment Buying An Item By Advanced Searching Successfully</td>
+
+  <td class="duration">
+    90.327s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003a: Verify Order An Item By BuyNowButton After Selecting Item At HomePage Successfully">TC003a_Order_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003a: Verify Order An Item By BuyNowButton After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    278.250s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003b: Verify Order An Item By ShopBookingLink After Selecting Item At HomePage Successfully">TC003b_Order_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003b: Verify Order An Item By ShopBookingLink After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    216.525s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 003c: Verify Installment Buying An Item After Selecting Item At HomePage Successfully">TC003c_Installment_Buying_By_Selecting_Item_At_HomePage</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 003c: Verify Installment Buying An Item After Selecting Item At HomePage Successfully</td>
+
+  <td class="duration">
+    126.037s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=TC003c_Installment_Buying_By_Selecting_Item_At_HomePage class="testOutput" style="display: none;">
+                           &lt;a href=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_09_06_39_TC003c_Installment_Buying_By_Selecting_Item_At_HomePage.png&apos;&gt; &lt;img src=&apos;/Users/ddinnguyeenx/eclipse-fptshop/QTiumFramework/src/Selenium-TestNG/failure-screenshots/09_08_2018 /firefox/09_08_2018_09_06_39_TC003c_Installment_Buying_By_Selecting_Item_At_HomePage.png&apos; height=&apos;100&apos; width=&apos;100&apos;/&gt; &lt;/a&gt;<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-15', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [true] but found [false]</b></a><br />
+    <div class="stackTrace" id="exception-15">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:496)<br />
+              org.testng.Assert.assertTrue(Assert.java:42)<br />
+              org.testng.Assert.assertTrue(Assert.java:52)<br />
+              com.logigear.selenium.QTiumAssert.verifyTrue(QTiumAssert.java:14)<br />
+              com.logigear.selenium.QTiumAssert.verifyTrue(QTiumAssert.java:27)<br />
+              FptShop.InstallmentBuyingPage.checkInstallmentBuyingResult(InstallmentBuyingPage.java:82)<br />
+              FptShop.FptShopTests.TC003c_Installment_Buying_By_Selecting_Item_At_HomePage(FptShopTests.java:517)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:639)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:774)<br />
+              org.testng.TestRunner.run(TestRunner.java:624)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:359)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:261)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1140)<br />
+              org.testng.TestNG.run(TestNG.java:1048)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004a: Verify Order An Item By BuyNowButton Through Category Successfully">TC004a_Order_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004a: Verify Order An Item By BuyNowButton Through Category Successfully</td>
+
+  <td class="duration">
+    284.364s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 004b: Verify Order An Item By ShopBookingLink Through Category Successfully">TC004b_Order_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 004b: Verify Order An Item By ShopBookingLink Through Category Successfully</td>
+
+  <td class="duration">
+    276.785s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005a: Verify Order Best Buy Item By BuyNowButton Through Category Successfully">TC005a_Order_Best_Buy_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005a: Verify Order Best Buy Item By BuyNowButton Through Category Successfully</td>
+
+  <td class="duration">
+    2783.221s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005b: Verify Order Best Buy Item By ShopBookingLink Through Category Successfully">TC005b_Order_Best_Buy_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005b: Verify Order Best Buy Item By ShopBookingLink Through Category Successfully</td>
+
+  <td class="duration">
+    215.054s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 005c: Verify Installment Buying An Item Through Category Successfully">TC005c_Installment_Buying_Item_By_Category</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 005c: Verify Installment Buying An Item Through Category Successfully</td>
+
+  <td class="duration">
+    81.795s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006b: Verify Order By Select An Item At Ranking Page Successfully">TC006b_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006b: Verify Order By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    209.284s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006c: Verify ShopBooking By Select An Item At Ranking Page Successfully">TC006c_Order_Item_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006c: Verify ShopBooking By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    208.031s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 006d: Verify Installment Buying By Select An Item At Ranking Page Successfully">TC006d_Installment_Buying_Through_Ranking_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 006d: Verify Installment Buying By Select An Item At Ranking Page Successfully</td>
+
+  <td class="duration">
+    94.154s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007a: Verify Order An Item By Select Price Range At Category Page Successfully">TC007a_Order_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007a: Verify Order An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    208.117s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007b: Verify ShopBooking An Item By Select Price Range At Category Page Successfully">TC007b_Order_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007b: Verify ShopBooking An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    274.445s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 007c: Verify Installment Buying An Item By Select Price Range At Category Page Successfully">TC007c_Installment_Buying_By_Select_Price_Range_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 007c: Verify Installment Buying An Item By Select Price Range At Category Page Successfully</td>
+
+  <td class="duration">
+    99.605s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008a: Verify Order An Item By Select Brand At Category Page Successfully">TC008a_Order_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008a: Verify Order An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    272.406s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 008b: Verify ShopBooking An Item By Select Brand At Category Page Successfully">TC008b_Order_By_Select_Brand_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 008b: Verify ShopBooking An Item By Select Brand At Category Page Successfully</td>
+
+  <td class="duration">
+    205.082s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009b: Verify ShopBooking An Item By Select Item At Category Page Successfully">TC009b_Order_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009b: Verify ShopBooking An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    274.114s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 009c: Verify Installment Buying An Item By Select Item At Category Page Successfully">TC009c_Installment_Buying_By_Select_Item_At_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 009c: Verify Installment Buying An Item By Select Item At Category Page Successfully</td>
+
+  <td class="duration">
+    101.187s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 010a: Verify Installment Buying At Installment Buying Category Page Successfully">TC010a_Installment_Buying_Through_Installment_Buying_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 010a: Verify Installment Buying At Installment Buying Category Page Successfully</td>
+
+  <td class="duration">
+    44.945s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 010b: Verify Installment Buying Through Installment Buying Category Page Successfully">TC010b_Installment_Buying_Through_Installment_Buying_Category_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 010b: Verify Installment Buying Through Installment Buying Category Page Successfully</td>
+
+  <td class="duration">
+    104.821s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 011a: Verify Order An Item At News Page Successfully">TC011a_Order_By_Select_Item_At_News_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 011a: Verify Order An Item At News Page Successfully</td>
+
+  <td class="duration">
+    227.284s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="javascript:void(0)" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="TC 011b: Verify Installment Buying An Item By Select Item At News Page Successfully">TC011b_Installment_Buying_By_Select_Item_At_News_Page</span>
+         </a>
+  </td>
+  
+  <td class="TMDes">TC 011b: Verify Installment Buying An Item By Select Item At News Page Successfully</td>
+
+  <td class="duration">
+    227.145s
+  </td>
+  <td class="result">
+        
+            
+
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

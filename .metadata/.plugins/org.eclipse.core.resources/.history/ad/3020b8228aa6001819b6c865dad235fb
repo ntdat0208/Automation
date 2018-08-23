@@ -1,0 +1,113 @@
+package FptShop;
+
+import java.util.Arrays;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
+import com.logigear.selenium.QTiumAutomation;
+
+import Common.Constants;
+
+public class AbstractPage {
+
+	public static synchronized AbstractPage getAbstractPage() {
+		if (instance == null)
+			instance = new AbstractPage();
+		return instance;
+	}
+
+	private static AbstractPage instance = null;
+
+	// close current page
+	public void closePage() {
+		QTiumAutomation.close();
+	}
+
+	// advanced search for an item at HomePage
+	public void advancedSearchItem() throws Exception {
+		System.out.println("advanced Search Item at HomePage: ");
+		String itemName = Constants.FPTSHOP_ITEM_NAME;
+		QTiumAutomation.enter(AbstractPageEntity.SEARCH_TEXTBOX, itemName);
+		QTiumAutomation.click(AbstractPageEntity.SEARCH_BUTTON);
+	}
+
+	// suggestion search for an item at HomePage
+	public void suggestionSearchItem() throws Exception {
+		System.out.println("suggestion Search Item at HomePage: ");
+		String itemName = Constants.FPTSHOP_ITEM_NAME;
+		QTiumAutomation.enter(AbstractPageEntity.SEARCH_TEXTBOX, itemName);
+		QTiumAutomation.click(AbstractPageEntity.SEARCH_SUGGESTION_ITEM);
+	}
+
+	// hover mouse over a category at HomePage
+	public void hoverCategory(int category) throws Exception {
+		By element = By.xpath(String.format(AbstractPageEntity.CATEGORY, category));
+		System.out.println("> hover Category: " + element);
+		QTiumAutomation.moveMouseToElement(element);
+	}
+
+	// hover mouse over a category at HomePage
+	public void hoverCategory(String category) throws Exception {
+		By element = By.xpath(String.format(AbstractPageEntity.CATEGORY, category));
+		System.out.println("> hover Category: " + element);
+		QTiumAutomation.moveMouseToElement(element);
+	}
+	
+	// remove cart pop-up
+	public void removeCartPopup() throws Exception {
+		System.out.println("> removing 'ins-item-left-container'");
+		By element = By.xpath("//div[@class='ins-item-left-container']");
+		QTiumAutomation.executeJavaScript("arguments[0].remove();", element);
+	}
+
+	// select a installment buying category at HomePage
+	public void selectInstallmentBuyingCategory() throws Exception {
+		System.out.println("select a installment buying category...");
+		removeCartPopup();
+		QTiumAutomation.click(AbstractPageEntity.INSTALLMENT_BUYING);
+	}
+
+	// select a category at HomePage
+	public void selectCategory() throws Exception {
+		int category = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 2));
+		By element = By.xpath(String.format(AbstractPageEntity.CATEGORY, category));
+		System.out.println("selecting category..." + element);
+		QTiumAutomation.clickJS(element);
+	}
+
+	// select a brand of a category
+	public void selectBrand() throws Exception {
+		int category = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 2, 3, 4));
+		int brand1 = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 2));
+		int brand2 = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 2, 3, 4));
+		System.out.println("selecting brand...");
+		this.hoverCategory(category);
+		QTiumAutomation.clickRandomItem(AbstractPageEntity.BRAND, category, brand1, brand2);
+	}
+
+	// select random best buy item
+	public void selectBestBuyItem() throws Exception {
+		int category = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 3, 4));
+		int item = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 2));
+		By element = By.xpath(String.format(AbstractPageEntity.BEST_BUY_ITEM, category, item));
+		System.out.println("selecting best buy item...");
+		this.hoverCategory(category);
+		QTiumAutomation.click(element);
+	}
+
+	// select random random ranking page
+	public void selectRankingPage() throws Exception {
+		int category = QTiumAutomation.randomNumberFromList(Arrays.asList(1, 4));
+		By element = By.xpath(String.format(AbstractPageEntity.RANKING_PAGE, category));
+		System.out.println("selecting ranking page...");
+		this.hoverCategory(category);
+		QTiumAutomation.click(element);
+	}
+
+	// open NewsPage
+	public void openNewsPage() throws Exception {
+		QTiumAutomation.click(AbstractPageEntity.NEWS_BUTTON);
+	}
+}
